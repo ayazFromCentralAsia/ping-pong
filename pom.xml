@@ -12,6 +12,7 @@
 		<module>management-service</module>
 		<module>ping-service</module>
 	</modules>
+	<packaging>pom</packaging>
 	<groupId>com.example</groupId>
 	<artifactId>ping-pong</artifactId>
 	<version>0.0.1-SNAPSHOT</version>

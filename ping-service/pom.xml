@@ -50,6 +50,7 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+			<version>10.20.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -87,6 +88,16 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+			<plugin>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-maven-plugin</artifactId>
+			<version>10.20.1</version>
+			<configuration>
+				<url>jdbc:postgresql://localhost:5432/ping_service</url>
+				<user>postgres</user>
+				<password>123321</password>
+			</configuration>
+		</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

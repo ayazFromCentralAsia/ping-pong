@@ -4,11 +4,13 @@ import com.example.management_service.dto.WebsiteRequest;
 import com.example.management_service.entity.Website;
 import com.example.management_service.exceptions.AlreadyExistsException;
 import com.example.management_service.repository.WebsiteRepository;
+import org.springframework.kafka.support.SendResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.CompletableFuture;
 
 import static java.lang.String.valueOf;
 
@@ -17,7 +19,7 @@ import static java.lang.String.valueOf;
 public class WebsiteService {
 
     private final WebsiteRepository websiteRepository;
-    private final KafkaTemplate<Object, Website> kafkaTemplate;
+    private final KafkaTemplate<String, Website> kafkaTemplate;
 
 
     public Website save(WebsiteRequest website) {
